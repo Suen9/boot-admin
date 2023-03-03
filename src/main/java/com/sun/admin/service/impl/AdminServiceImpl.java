@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements AdminService{
     @Autowired
-    private AdminService adminService;
+    private AdminMapper adminMapper;
 
     @Override
     public Admin getAdminByName(String adminName) {
-        return adminService.getAdminByName(adminName);
+        return adminMapper.getAdminByName(adminName);
     }
 }

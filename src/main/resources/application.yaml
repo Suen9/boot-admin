@@ -8,3 +8,5 @@ spring:
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
+  mapper-locations: classpath:mapper/*.xml #mybatis的mapper映射文件位置
+  type-aliases-package: com.sun.admin.pojo

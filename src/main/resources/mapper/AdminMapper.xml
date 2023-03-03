@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sun.admin.mapper.AdminMapper">
+    <sql id="adminColumns">
+        admin_id,admin_name,admin_pwd
+    </sql>
+
+
+    <resultMap id="getAdminByNameResMap" type="Admin">
+        <id column="admin_id" property="adminId"></id>
+        <result column="admin_name" property="adminName"></result>
+        <result column="admin_pwd" property="adminPwd"></result>
+    </resultMap>
+
+
+<!--    Admin getAdminByName(String adminName);-->
+    <select id="getAdminByName" resultMap="getAdminByNameResMap">
+        select <include refid="adminColumns"></include>
+        from t_admin
+        where admin_name = #{adminName}
+    </select>
+</mapper>

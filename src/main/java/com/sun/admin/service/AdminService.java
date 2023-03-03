@@ -8,4 +8,5 @@ import com.sun.admin.pojo.Admin;
  * @author Sun
  */
 public interface AdminService extends IService<Admin> {
+    Admin getAdminByName(String adminName);
 }
